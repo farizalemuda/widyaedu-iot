@@ -1,6 +1,5 @@
 const int pinSensor = A0;
 int adcValue;
-boolean binary;
 
 void setup()
 {

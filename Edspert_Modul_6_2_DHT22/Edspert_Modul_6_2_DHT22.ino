@@ -78,12 +78,14 @@ void loop() {
       http.addHeader("X-M2M-Origin", "your-access-key");
       http.addHeader("Content-Type", "application/json;ty=4");
       http.addHeader("Accept", "application/json");
+      
       // inisiasi data yang dikirim di restful api
-      String httpRequestData ="{\"m2m:cin\": { \"con\": \"{\\\"temp\\\":\\\"";
+      String httpRequestData ="{\"m2m:cin\": { \"con\": \"{\\\"temp\\\":";
       httpRequestData = httpRequestData + String(temp, 2);
-      httpRequestData = httpRequestData + "\\\",\\\"hum\\\":\\\"";
-      httpRequestData = httpRequestData + String(hum,1);
-      httpRequestData = httpRequestData + "\\\"}\"}}";
+      httpRequestData = httpRequestData + ",\\\"hum\\\":";
+      httpRequestData = httpRequestData + String(hum, 1);
+      httpRequestData = httpRequestData + "}\"}}";
+      
       // mengirimkan HTTP POST request
       int httpResponseCode = http.POST(httpRequestData);
      

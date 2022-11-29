@@ -8,9 +8,9 @@
 #define deviceName "your-device-name"     // Ganti dengan device Antares yang telah dibuat
 
 // LED
-#define LEDav 12 // ADC Value
-#define LEDt 13 // Suhu
-#define LEDmoist 17 // Moisture
+#define LED_Grow_Light 12 // ADC Value
+#define LED_Fan 13 // Suhu
+#define LED_Drip_Irrigation 17 // Moisture
 
 // Batas LED Menyala
 int batasLDR = 2400; // Batas ADC Value
@@ -22,9 +22,9 @@ AntaresESP32HTTP antares(ACCESSKEY);      // Buat objek antares
 void setup() {
   Serial.begin(9600);     // Buka komunikasi serial dengan baudrate 115200
   
-  pinMode(LEDav, OUTPUT);
-  pinMode(LEDt, OUTPUT);
-  pinMode(LEDmoist, OUTPUT);
+  pinMode(LED_Grow_Light, OUTPUT);
+  pinMode(LED_Fan, OUTPUT);
+  pinMode(LED_Drip_Irrigation, OUTPUT);
 
   antares.setDebug(true);   // Nyalakan debug. Set menjadi "false" jika tidak ingin pesan-pesan tampil di serial monitor
   antares.wifiConnection(WIFISSID,PASSWORD);  // Mencoba untuk menyambungkan ke WiFi
@@ -49,31 +49,30 @@ void loop() {
 
   // LED LDR
   if(LDR > batasLDR){
-    digitalWrite(LEDav, HIGH);
+    digitalWrite(LED_Grow_Light, HIGH);
     Serial.println("Lamp is activated");
   }
   else {
-    digitalWrite(LEDav, LOW);
+    digitalWrite(LED_Grow_Light, LOW);
     Serial.println("Lamp is deactivated");
   }
 
   // LED Suhu
   if(suhu > batast){
-    digitalWrite(LEDt, HIGH);
+    digitalWrite(LED_Fan, HIGH);
     Serial.println("Fan is activated");
   }
   else {
-    digitalWrite(LEDt, LOW);
+    digitalWrite(LED_Fan, LOW);
     Serial.println("Fan is deactivated");
   }
   // LED Moisture
   if(moist > batasmoist){
-    digitalWrite(LEDmoist, HIGH);
+    digitalWrite(LED_Drip_Irrigation, HIGH);
     Serial.println("Drip irigation is activated");
   }
   else {
-    digitalWrite(LEDmoist, LOW);
+    digitalWrite(LED_Drip_Irrigation, LOW);
     Serial.println("Drip irigation is deactivated");
   }
-  
 }

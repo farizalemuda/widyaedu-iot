@@ -47,7 +47,7 @@ void loop() {
   Serial.println("Moisture: " + String(moist));
   delay(10000); 
 
-  // LED LDR
+  // LED Grow Light
   if(LDR > batasLDR){
     digitalWrite(LED_Grow_Light, HIGH);
     Serial.println("Lamp is activated");
@@ -57,7 +57,7 @@ void loop() {
     Serial.println("Lamp is deactivated");
   }
 
-  // LED Suhu
+  // LED Fan
   if(suhu > batast){
     digitalWrite(LED_Fan, HIGH);
     Serial.println("Fan is activated");
@@ -66,7 +66,8 @@ void loop() {
     digitalWrite(LED_Fan, LOW);
     Serial.println("Fan is deactivated");
   }
-  // LED Moisture
+  
+  // LED Drip Irrigation
   if(moist > batasmoist){
     digitalWrite(LED_Drip_Irrigation, HIGH);
     Serial.println("Drip irigation is activated");

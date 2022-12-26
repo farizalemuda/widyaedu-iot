@@ -36,10 +36,10 @@ void setup()
   // inisiasi DHT
   dht.setup(PIN_DHT, DHTesp::DHT22);
 
-  // inisiasi wifi antares
-  antares.wifiConnection(WIFISSID,PASSWORD);
   // inisiasi debug lib antares
   antares.setDebug(true);
+  // inisiasi wifi antares
+  antares.wifiConnection(WIFISSID,PASSWORD);
 }
  
 void loop() {

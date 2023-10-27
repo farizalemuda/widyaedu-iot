@@ -61,13 +61,7 @@ void loop() {
     Serial.println("status 0");
     digitalWrite(pinLED, LOW);
   }
-  /*
-  if(temp>=40){
-    digitalWrite(pinLED, HIGH);
-  } else {
-    digitalWrite(pinLED, LOW);
-  }
-  */
+  
   Serial.println();
   delay(5000);
 }

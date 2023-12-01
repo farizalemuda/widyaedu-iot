@@ -7,9 +7,9 @@
 
 const char* ssid = "Wokwi-GUEST";
 const char* password = "";
-const String appName = "workshop-widyaedu";
-const String devName = "led";
-const String accessKey = "e7e349fc2216941a:9d0cf82c25277bdd";
+const String appName = "antares-app-name";
+const String devName = "antares-dev-name";
+const String accessKey = "api-key";
 const String url = String("http://platform.antares.id:8080/~/antares-cse/antares-id/"+ appName+"/"+devName+"/la");
 
 void setup() {

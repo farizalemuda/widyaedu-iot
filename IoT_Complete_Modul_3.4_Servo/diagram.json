@@ -1,0 +1,17 @@
+{
+    "version": 1,
+    "author": "Fariz Alemuda",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+      { "type": "wokwi-servo", "id": "servo1", "top": -2.53, "left": 153.6, "attrs": {} }
+    ],
+    "connections": [
+      [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+      [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+      [ "servo1:PWM", "esp:D18", "green", [ "h-16.1", "v15.23" ] ],
+      [ "servo1:GND", "esp:GND.1", "black", [ "h-34.1", "v101.53" ] ],
+      [ "servo1:V+", "esp:3V3", "red", [ "h-24.77", "v101.53" ] ]
+    ],
+    "dependencies": {}
+  }

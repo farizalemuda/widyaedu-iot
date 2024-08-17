@@ -8,9 +8,9 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  Serial.println("=============================");
-  Serial.println("EDSPERT - Pelatihan 4 - Relay");
-  Serial.println("=============================");
+  Serial.println("=========================");
+  Serial.println("EDSPERT - Modul 4 - Relay");
+  Serial.println("=========================");
   Serial.println("Relay OFF");
   digitalWrite(pinRelay, LOW);
   delay(2000);
